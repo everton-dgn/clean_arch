@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build/dist",
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsxImportSource": "react",
+    "removeComments": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/types/styledComponents.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "./.storybook"]
+}
