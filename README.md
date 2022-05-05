@@ -1,11 +1,11 @@
 <div align="center">
 
-  <a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)</a>
-  ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
+  <a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/clean_arch?style=plastic)</a>
+  ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/clean_arch?style=plastic)
+  ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/clean_arch?color=yellow&style=plastic)
 </div>
 
-<h1 align="center">Boilerplate Complete and updated with React.js, Webpack, Typescript, Styled-Components, Tests and Redux Toolkit</h1>
+<h1 align="center">Clean Architecture</h1>
 
 <br />
 
@@ -120,7 +120,7 @@ In addition to being constantly updated, this project was configured in the smal
 ## Clone Repository
 
 ```bash
-git clone https://github.com/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate.git
+git clone https://github.com/everton-dgn/clean_arch.git
 ```
 
 ## Install Dependencies
