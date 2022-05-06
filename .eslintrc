@@ -40,6 +40,7 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
+    "no-useless-constructor": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
