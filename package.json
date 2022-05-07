@@ -27,13 +27,14 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-sb"
+      "pre-push": "yarn test --findRelatedTests -b && yarn build && yarn build-sb"
     }
   },
   "lint-staged": {
     "src/**/*": [
       "yarn lint",
-      "yarn lint:css"
+      "yarn lint:css",
+      "yarn typecheck"
     ]
   },
   "dependencies": {
@@ -114,9 +115,5 @@
     "webpack": "^5.5.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2"
-  },
-  "resolutions": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2"
   }
 }
