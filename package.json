@@ -34,7 +34,8 @@
     "src/**/*": [
       "yarn lint",
       "yarn lint:css",
-      "yarn typecheck"
+      "yarn typecheck",
+      "yarn test --findRelatedTests -b"
     ]
   },
   "dependencies": {
