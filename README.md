@@ -232,8 +232,6 @@ yarn typecheck
     ...
     ```
 
-- To create a complete component folder with tests, storybook, index and styles files, just use the command in the terminal: `yarn generate ComponentName`
-
 ---
 
 # :technologist: Author
