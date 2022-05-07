@@ -14,7 +14,7 @@
     "build:dev": "env-cmd -f .env.dev webpack --config webpack/webpack.dev.js",
     "lint": "eslint src/**/*.{ts,tsx,js,jsx,json} --max-warnings=0",
     "lint:css": "stylelint src/**/styles.ts src/**/GlobalStyles.ts src/theme/*.ts",
-    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
     "test": "jest --maxWorkers=50% --passWithNoTests",
     "test:w": "jest --watch --maxWorkers=25% --passWithNoTests",
     "test:coverage": "jest --maxWorkers=50% --passWithNoTests --coverage",
