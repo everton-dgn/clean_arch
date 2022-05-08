@@ -1,5 +1,5 @@
 import faker from '@faker-js/faker'
-import { HttpPostClientSpy } from 'data/__mocks__/httpClient'
+import { HttpPostClientSpy } from 'data/__mocks__'
 import { HttpStatusCode } from 'data/protocols/http'
 import { mockAccountModel, mockAuthentication } from 'domain/__mock__/account'
 import { InvalidCredentialsError, UnexpectedError } from 'domain/errors'
