@@ -24,7 +24,11 @@ module.exports = {
     'src/theme',
     'src/styles',
     'stories.tsx',
-    'types.ts'
+    'types.ts',
+
+    'data/useCases/authentication/index.ts',
+    'domain/errors/index.ts',
+    'data/protocols/http/index.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   roots: ['<rootDir>/src'],
