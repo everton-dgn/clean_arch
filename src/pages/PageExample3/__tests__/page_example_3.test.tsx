@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import PageExample3 from '..'
-import { mockedUseNavigate } from '__mocks__'
+import { mockedUseNavigate } from '__mocks__/setup'
 import * as mock from '../__mocks__/mockedUseRepositoriesInTheGithub'
 
 let mockedUseRepositoriesInTheGithub = mock.useRepositoriesInTheGithub1

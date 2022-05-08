@@ -1,2 +1,2 @@
-export * from './matchMedia'
 export * from './reactRouterDom'
+export * from './matchMedia'

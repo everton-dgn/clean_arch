@@ -14,21 +14,26 @@
     "build:dev": "env-cmd -f .env.dev webpack --config webpack/webpack.dev.js",
     "lint": "eslint src/**/*.{ts,tsx,js,jsx,json} --max-warnings=0",
     "lint:css": "stylelint src/**/styles.ts src/**/GlobalStyles.ts src/theme/*.ts",
-    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
     "test": "jest --maxWorkers=50% --passWithNoTests",
     "test:w": "jest --watch --maxWorkers=25% --passWithNoTests",
     "test:coverage": "jest --maxWorkers=50% --passWithNoTests --coverage",
     "sb": "start-storybook -p 6006",
     "build-sb": "build-storybook",
-    "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "verify:update": "yarn upgrade-interactive --latest",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn lint:css && yarn typecheck",
-      "pre-push": "yarn test --findRelatedTests -b && yarn build && yarn build-sb"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-sb"
     }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint",
+      "yarn lint:css"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
@@ -43,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
+    "@faker-js/faker": "^6.3.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@storybook/addon-a11y": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
@@ -88,7 +94,7 @@
     "jest-environment-jsdom": "^28.0.2",
     "jest-styled-components": "^7.0.8",
     "jest-svg-transformer": "^1.0.0",
-    "plop": "^3.0.5",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.5.1",
     "react-refresh": "^0.13.0",
     "react-test-renderer": "^17.0.2",
@@ -106,9 +112,5 @@
     "webpack": "^5.5.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2"
-  },
-  "resolutions": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2"
   }
 }

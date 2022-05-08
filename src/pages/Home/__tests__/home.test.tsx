@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import Home from '..'
-import { mockedUseNavigate } from '__mocks__'
+import { mockedUseNavigate } from '__mocks__/setup'
 
 describe('[Page] Home', () => {
   beforeEach(() => {
