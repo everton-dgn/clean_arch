@@ -1,1 +1,1 @@
-export * from './axiosHttpClient'
+export * from 'infra/http/axiosHttpClient/axiosHttpClientAdapter'
