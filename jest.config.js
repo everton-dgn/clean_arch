@@ -9,23 +9,11 @@ module.exports = {
   coveragePathIgnorePatterns: [
     'src/index.tsx',
     'src/app.tsx',
-    'src/pages/index.tsx',
-    'src/components/index.tsx',
-    'src/components/atoms/Svg',
-    'src/hooks/index.ts',
-    'src/templates/index.ts',
-    'src/utils/index.ts',
-    'src/assets',
     'src/types',
-    'src/libs',
-    'src/router',
-    'src/services',
     'src/store',
     'src/theme',
     'src/styles',
     'stories.tsx',
-    'types.ts',
-
     'data/useCases/authentication/index.ts',
     'domain/errors/index.ts',
     'data/protocols/http/index.ts'
