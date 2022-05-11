@@ -1,7 +1,7 @@
+import T from 'presentation/theme'
 import { createGlobalStyle } from 'styled-components'
-import T from 'theme'
 
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -10,8 +10,8 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     list-style: none !important;
-    outline: none;
     font-family: ${T.fonts.family};
+    font-size: ${T.fonts.sizes.medium};
   }
 
   html {
@@ -21,7 +21,7 @@ export default createGlobalStyle`
   body,
   html,
   #root {
-    background-color: ${T.colors.secondary};
+    background-color: ${T.colors.background};
     color: ${T.colors.black};
   }
 
@@ -38,6 +38,13 @@ export default createGlobalStyle`
     cursor: pointer;
     border: none;
     border-radius: ${T.border.radius};
+    color: ${T.colors.white};
+    background-color: ${T.colors.primary};
+    line-height: 6rem;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   #root {
@@ -51,6 +58,18 @@ export default createGlobalStyle`
   a:active {
     color: inherit;
     text-decoration: none;
+  }
+
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    border: 0.1rem solid ${T.colors.primaryLight};
+    line-height: 4rem;
+    border-radius: 0.4rem;
+
+    &:focus {
+      outline-color: ${T.colors.primaryLight};
+    }
   }
 
   ::-webkit-scrollbar,

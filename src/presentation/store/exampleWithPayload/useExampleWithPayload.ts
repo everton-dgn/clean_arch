@@ -1,6 +1,12 @@
-import { useTypedDispatch, useTypedSelector } from '../useHelpers'
-import { setRemoveText, setAddText } from './slice'
-import { ExemploTextProp } from './types'
+import {
+  setRemoveText,
+  setAddText
+} from 'presentation/store/exampleWithPayload/slice'
+import { ExemploTextProp } from 'presentation/store/exampleWithPayload/types'
+import {
+  useTypedDispatch,
+  useTypedSelector
+} from 'presentation/store/useHelpers'
 
 export const useExampleWithPayload = () => {
   const dispatch = useTypedDispatch()

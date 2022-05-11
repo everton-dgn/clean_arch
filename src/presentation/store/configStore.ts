@@ -1,6 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
+import {
+  persistedReducer,
+  serializableCheck
+} from 'presentation/store/persistConfig'
 import { persistStore } from 'redux-persist'
-import { persistedReducer, serializableCheck } from './persistConfig'
 
 export const store = configureStore({
   reducer: persistedReducer,

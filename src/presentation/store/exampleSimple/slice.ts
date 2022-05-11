@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ExampleSimpleType } from './types'
+import { ExampleSimpleType } from 'presentation/store/exampleSimple/types'
 
 const initialState: ExampleSimpleType = {
   toggle: false

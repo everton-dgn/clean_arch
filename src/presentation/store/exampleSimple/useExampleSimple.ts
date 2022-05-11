@@ -1,5 +1,8 @@
-import { useTypedDispatch, useTypedSelector } from '../useHelpers'
-import { setChangeExample } from './slice'
+import { setChangeExample } from 'presentation/store/exampleSimple/slice'
+import {
+  useTypedDispatch,
+  useTypedSelector
+} from 'presentation/store/useHelpers'
 
 export const useExampleSimple = () => {
   const dispatch = useTypedDispatch()

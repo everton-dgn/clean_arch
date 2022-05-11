@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ExampleWithPayloadType, PayloadType } from './types'
+import {
+  ExampleWithPayloadType,
+  PayloadType
+} from 'presentation/store/exampleWithPayload/types'
 
 const initialState: ExampleWithPayloadType = {
   text: ''

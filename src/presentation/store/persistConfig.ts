@@ -1,4 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit'
+import * as Reducers from 'presentation/store/reducers'
 import {
   FLUSH,
   PAUSE,
@@ -9,7 +10,6 @@ import {
   REHYDRATE
 } from 'redux-persist'
 import asyncSessionStorage from 'redux-persist/lib/storage'
-import * as Reducers from './reducers'
 
 const whitelist = ['exampleSimple', 'exampleWithPayload']
 
