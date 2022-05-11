@@ -47,8 +47,6 @@ In addition to being constantly updated, this project was configured in the smal
   * [Start Production Environment](#start-production-environment)
   * [Run Tests](#run-tests)
   * [Run Tests in Watch Mode](#run-tests-in-watch-mode)
-  * [Launch Storybook in Development Mode](#launch-storybook-in-development-mode)
-  * [Generate Storybook Production Build](#generate-storybook-production-build)
   * [Run Lints](#run-lints)
 * [Important Considerations](#rotating_light-important-considerations)
 * [Author](#technologist-author)
@@ -73,8 +71,6 @@ In addition to being constantly updated, this project was configured in the smal
 
 🐙 React Testing Library
 
-📝 Storybook
-
 🔧 Webpack
 
 <br />
@@ -82,6 +78,8 @@ In addition to being constantly updated, this project was configured in the smal
 ---
 
 # :triangular_flag_on_post: Features
+
+- [x] Clean Architecture;
 
 - [x] Responsive design;
 
@@ -169,20 +167,6 @@ yarn test
 yarn test:w
 ```
 
-## Launch Storybook in Development Mode
-
-```bash
-yarn sb
-```
-
-Available in http://localhost:6006
-
-## Generate Storybook Production Build
-
-```bash
-yarn build-sb
-```
-
 ## Run Lints
 
 ```bash
@@ -203,7 +187,7 @@ yarn typecheck
 
 # :rotating_light: Important Considerations
 
-- The husky is configured to not allow commit if there are any lint and typescript errors. The push can only be done if all tests and builds (of the project and the storybook) pass.
+- The husky is configured to not allow commit if there are any lint and typescript errors. The push can only be done if all tests and builds pass.
 
 - Due to husky's build check settings, to push with git, the development server must be stopped first or an error will occur in the `git push` command.
 
