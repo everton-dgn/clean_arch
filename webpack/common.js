@@ -76,7 +76,7 @@ module.exports = env => ({
           getCustomTransformers: () => ({
             before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean)
           }),
-          transpileOnly: isDevelopment
+          transpileOnly: true
         }
       },
       {
