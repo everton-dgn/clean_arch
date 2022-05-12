@@ -8,12 +8,11 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
     'index.ts',
-    'src/app.tsx',
+    'src/presentation/app.tsx',
     'src/types',
-    'src/store',
-    'src/theme',
-    'src/styles',
-    'stories.tsx',
+    'src/presentation/store',
+    'src/presentation/theme',
+    'src/presentation/globalStyles',
     'data/useCases/authentication/index.ts',
     'domain/errors/index.ts',
     'data/protocols/http/index.ts'
@@ -22,9 +21,6 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   transform: {
-    '^.+\\.tsx?$': [
-      '@swc/jest',
-      { jsc: { transform: { react: { runtime: 'automatic' } } } }
-    ]
+    '^.+\\.tsx?$': 'ts-jest'
   }
 }
