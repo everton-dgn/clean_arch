@@ -1,11 +1,20 @@
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin, EnvironmentPlugin } = require('webpack')
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshTypeScript = require('react-refresh-typescript')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
+
+const styledComponentsOptions = {
+  displayName: true,
+  fileName: false,
+  namespace: process.env.NAME_APPLICATTION,
+  sourceMap: true,
+  pure: true
+}
 
 module.exports = env => ({
   mode: env.mode,
@@ -47,34 +56,27 @@ module.exports = env => ({
   module: {
     rules: [
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader']
+      },
+      {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          plugins: [['babel-plugin-styled-components', { pure: true }]]
+          plugins: [['babel-plugin-styled-components', styledComponentsOptions]]
         }
       },
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'swc-loader',
-          options: {
-            parseMap: true,
-            jsc: {
-              parser: { syntax: 'typescript' },
-              target: 'es2022',
-              minify: { compress: isProduction },
-              transform: {
-                react: {
-                  runtime: 'automatic',
-                  development: isDevelopment,
-                  refresh: isDevelopment
-                }
-              }
-            },
-            minify: true
-          }
+        loader: 'ts-loader',
+        options: {
+          getCustomTransformers: () => ({
+            before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean)
+          }),
+          transpileOnly: isDevelopment
         }
       },
       {
