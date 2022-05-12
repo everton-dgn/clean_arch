@@ -113,5 +113,5 @@ export const MessageError = styled.p`
 
 export const Footer = styled.footer`
   background: ${T.colors.primary};
-  height: 4.8rem;
+  height: 40.8rem;
 `

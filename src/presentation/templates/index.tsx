@@ -1,5 +1,5 @@
 import { lazy } from 'react'
 
-export { default as Default } from './Default'
-export const Example = lazy(() => import('./Example'))
-export const Error = lazy(() => import('./Error'))
+export { default as Default } from './default'
+export const Example = lazy(() => import('./example'))
+export const Error = lazy(() => import('./error'))
