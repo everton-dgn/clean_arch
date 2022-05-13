@@ -1,16 +1,24 @@
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin, EnvironmentPlugin } = require('webpack')
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
 
+const styledComponentsOptions = {
+  displayName: true,
+  fileName: false,
+  namespace: process.env.NAME_APPLICATTION,
+  sourceMap: true,
+  pure: true
+}
+
 module.exports = env => ({
   mode: env.mode,
-  entry: './src/index',
-  // devtool: 'source-map',
+  entry: './src/main/index',
+  devtool: 'source-map',
   output: {
     clean: true,
     publicPath: env.publicPath,
@@ -30,7 +38,7 @@ module.exports = env => ({
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js']
   },
   devServer: {
     headers: {
@@ -41,16 +49,22 @@ module.exports = env => ({
     port: env.port,
     historyApiFallback: true,
     hot: true,
-    open: true
+    open: true,
+    devMiddleware: { writeToDisk: true }
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader']
+      },
       {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          plugins: [['babel-plugin-styled-components', { pure: true }]]
+          plugins: [['babel-plugin-styled-components', styledComponentsOptions]]
         }
       },
       {
@@ -59,15 +73,14 @@ module.exports = env => ({
         use: {
           loader: 'swc-loader',
           options: {
-            // parseMap: true,
+            parseMap: true,
             jsc: {
-              parser: { syntax: 'typescript' },
+              parser: { syntax: 'typescript', tsx: true },
               target: 'es2022',
               minify: { compress: isProduction },
               transform: {
                 react: {
                   runtime: 'automatic',
-                  development: isDevelopment,
                   refresh: isDevelopment
                 }
               }
@@ -77,11 +90,12 @@ module.exports = env => ({
         }
       },
       {
-        test: /\.svg$/,
-        use: [{ loader: '@svgr/webpack' }]
+        test: /\.svg$/i,
+        issuer: /\.tsx?$/,
+        use: ['@svgr/webpack']
       },
       {
-        test: /\.(png|svg|jpg|gif)$/i,
+        test: /\.(png|jpg|svg|gif)$/i,
         use: ['file-loader']
       }
     ]

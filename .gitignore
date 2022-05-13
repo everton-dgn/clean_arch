@@ -31,14 +31,5 @@ yarn-error.log*
 .idea/
 .vscode/
 
-# PWA
-**/public/workbox-*.js
-**/public/sw.js
-**/public/fallback-*.js
-
-# storybook
-/storybook-static
-/src/stories
-
 # typescript incremental features
 tsconfig.tsbuildinfo

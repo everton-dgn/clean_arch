@@ -7,13 +7,12 @@ module.exports = {
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
-    'src/index.tsx',
-    'src/app.tsx',
+    'index.ts',
+    'src/presentation/app.tsx',
     'src/types',
-    'src/store',
-    'src/theme',
-    'src/styles',
-    'stories.tsx',
+    'src/presentation/store',
+    'src/presentation/theme',
+    'src/presentation/globalStyles',
     'data/useCases/authentication/index.ts',
     'domain/errors/index.ts',
     'data/protocols/http/index.ts'
