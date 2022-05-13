@@ -1,15 +1,10 @@
-import { ReactComponent as Logo } from 'presentation/assets/logo.svg'
 import * as C from 'presentation/components'
 import * as S from './styles'
 
 const Login = () => {
   return (
     <S.Login>
-      <S.Header>
-        <Logo title="Logo 4D" />
-
-        <S.Title>4Dev - Enquetes para Programadores</S.Title>
-      </S.Header>
+      <C.LoginHeader />
 
       <S.Form>
         <S.SubTitle>Login</S.SubTitle>
@@ -40,7 +35,7 @@ const Login = () => {
         </S.WrapperError>
       </S.Form>
 
-      <S.Footer />
+      <C.Footer />
     </S.Login>
   )
 }

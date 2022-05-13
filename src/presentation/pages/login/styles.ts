@@ -9,23 +9,6 @@ export const Login = styled.div`
   justify-content: space-between;
 `
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-top: 4rem solid ${T.colors.primaryDark};
-  background: ${T.colors.primary};
-  align-items: center;
-
-  svg {
-    margin-top: 4rem;
-  }
-`
-export const Title = styled.h1`
-  color: ${T.colors.white};
-  margin: 1.6rem 0 4rem;
-`
-
 export const SubTitle = styled.h2`
   color: ${T.colors.black};
   font-size: ${T.fonts.sizes.Large};
@@ -109,9 +92,4 @@ export const MessageError = styled.p`
   width: 100%;
   font-size: ${T.fonts.sizes.xSmall};
   color: ${T.colors.error};
-`
-
-export const Footer = styled.footer`
-  background: ${T.colors.primary};
-  height: 40.8rem;
 `
