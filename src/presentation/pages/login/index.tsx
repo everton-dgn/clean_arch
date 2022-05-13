@@ -21,10 +21,7 @@ const Login = () => {
 
         <S.WrapperLink>Criar conta</S.WrapperLink>
 
-        <S.WrapperError>
-          <C.Load />
-          <S.MessageError>Erro</S.MessageError>
-        </S.WrapperError>
+        <C.FormStatus />
       </S.Form>
 
       <C.Footer />

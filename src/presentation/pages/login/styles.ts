@@ -46,20 +46,3 @@ export const WrapperLink = styled.span`
     text-decoration: underline;
   }
 `
-
-export const WrapperError = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-
-  & > div,
-  & > p {
-    margin-top: ${T.spacings.medium};
-  }
-`
-
-export const MessageError = styled.p`
-  width: 100%;
-  font-size: ${T.fonts.sizes.xSmall};
-  color: ${T.colors.error};
-`
