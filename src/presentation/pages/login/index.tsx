@@ -9,21 +9,13 @@ const Login = () => {
       <S.Form>
         <S.SubTitle>Login</S.SubTitle>
 
-        <S.WrapperInputStatus>
-          <S.Input
-            type="email"
-            name="email"
-            placeholder="Digite o seu e-mail"
-          />
-        </S.WrapperInputStatus>
+        <C.Input type="email" name="email" placeholder="Digite o seu e-mail" />
 
-        <S.WrapperInputStatus>
-          <S.Input
-            type="password"
-            name="password"
-            placeholder="Digite a sua senha"
-          />
-        </S.WrapperInputStatus>
+        <C.Input
+          type="password"
+          name="password"
+          placeholder="Digite a sua senha"
+        />
 
         <S.Button type="submit">Entrar</S.Button>
 
