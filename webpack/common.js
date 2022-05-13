@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin, EnvironmentPlugin } = require('webpack')
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const ReactRefreshTypeScript = require('react-refresh-typescript')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
@@ -71,12 +70,23 @@ module.exports = env => ({
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',
-        options: {
-          getCustomTransformers: () => ({
-            before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean)
-          }),
-          transpileOnly: true
+        use: {
+          loader: 'swc-loader',
+          options: {
+            parseMap: true,
+            jsc: {
+              parser: { syntax: 'typescript', tsx: true },
+              target: 'es2022',
+              minify: { compress: isProduction },
+              transform: {
+                react: {
+                  runtime: 'automatic',
+                  refresh: isDevelopment
+                }
+              }
+            },
+            minify: true
+          }
         }
       },
       {
