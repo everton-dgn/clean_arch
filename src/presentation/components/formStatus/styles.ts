@@ -14,6 +14,7 @@ export const WrapperError = styled.div`
 
 export const MessageError = styled.p`
   width: 100%;
+  text-align: center;
   font-size: ${T.fonts.sizes.xSmall};
   color: ${T.colors.error};
 `
