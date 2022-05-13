@@ -7,7 +7,7 @@ const RoutesWrapper = () => (
   <Suspense fallback={<>Lazy Loading...</>}>
     <Routes>
       {/* <Route element={<Template.Default />}> */}
-      <Route index element={<Pages.Login />} />
+      <Route path="/login" element={<Pages.Login />} />
       {/* </Route> */}
 
       {/* <Route path="/" element={<Template.Example />}> */}
