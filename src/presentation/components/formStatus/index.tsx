@@ -1,11 +1,14 @@
 import * as C from 'presentation/components'
 import * as S from './styles'
+import { FormStatusProps } from './types'
 
-const FormStatus = () => {
+const FormStatus = ({ formStatus }: FormStatusProps) => {
   return (
     <S.WrapperError>
-      <C.Load />
-      <S.MessageError>Erro</S.MessageError>
+      {formStatus.isLoading && <C.Load />}
+      {formStatus.errorMessage && (
+        <S.MessageError role="status">{formStatus.errorMessage}</S.MessageError>
+      )}
     </S.WrapperError>
   )
 }
