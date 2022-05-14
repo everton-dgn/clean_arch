@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from 'presentation/assets/logo.svg'
+import { ReactComponent as Logo } from 'presentation/assets/images/logo.svg'
 import * as S from './styles'
 
 const LoginHeader = () => {
