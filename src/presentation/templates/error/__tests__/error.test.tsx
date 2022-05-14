@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import Error from '..'
-import { renderWithProviders } from 'utils'
+import { renderWithProviders } from 'presentation/utils'
 
-describe('[Template] Error', () => {
+describe('Error', () => {
   it('should render a children', () => {
     renderWithProviders(
       <Error>

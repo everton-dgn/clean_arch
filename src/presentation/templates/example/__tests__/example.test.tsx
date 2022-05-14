@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import Example from '..'
-import { renderWithProviders } from 'utils'
+import { renderWithProviders } from 'presentation/utils'
 
-describe('[Template] Example', () => {
+describe('Example', () => {
   it('should render a children', () => {
     renderWithProviders(<Example />)
     const title = screen.getByRole('heading', { name: 'Template Example' })
