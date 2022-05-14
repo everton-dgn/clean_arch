@@ -8,6 +8,11 @@ export const Load = styled.div`
   height: 1.3rem;
   margin: 0 auto;
 
+  &:focus {
+    box-shadow: 0 0 0 0.2rem ${T.colors.black};
+    border-radius: ${T.border.radius};
+  }
+
   & span {
     position: absolute;
     top: 0;

@@ -30,6 +30,17 @@ export const Form = styled.form`
 
 export const Button = styled.button`
   margin-top: ${T.spacings.xxxLarge};
+
+  &:disabled {
+    font-weight: 500;
+    color: ${T.colors.disabledColor};
+    background-color: ${T.colors.disabledBackground};
+    cursor: not-allowed;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `
 
 export const WrapperLink = styled.span`
@@ -37,7 +48,7 @@ export const WrapperLink = styled.span`
   width: 100%;
   justify-content: center;
   text-align: center;
-  color: ${T.colors.primary};
+  color: ${T.colors.primaryLight};
   margin-top: ${T.spacings.medium};
   cursor: pointer;
   font-weight: ${T.fonts.bold};
