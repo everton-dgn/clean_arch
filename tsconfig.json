@@ -25,6 +25,7 @@
     "declaration": true,
     "skipLibCheck": true
   },
-  "include": ["src/types/styledComponents.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "src/presentation/types/styledComponents.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "./.storybook"]
 }
