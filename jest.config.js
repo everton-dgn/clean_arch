@@ -20,6 +20,9 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
+  moduleNameMapper: {
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.ts'
+  },
   transform: {
     '^.+\\.tsx?$': [
       '@swc/jest',
