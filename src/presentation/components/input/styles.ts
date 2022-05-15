@@ -7,19 +7,18 @@ export const WrapperInputStatus = styled.div`
   width: 100%;
   position: relative;
   margin-top: ${T.spacings.large};
+  justify-content: center;
+`
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: #f14848;
-    width: 10px;
-    height: 10px;
-    border-radius: ${T.border.circle};
-    margin-right: 0.8rem;
-    right: 0;
-    top: 16px;
-  }
+export const CircleFieldStatus = styled.span<{ isValidatedTheField: boolean }>`
+  display: block;
+  position: absolute;
+  background-color: ${({ isValidatedTheField }) =>
+    isValidatedTheField ? T.colors.success : T.colors.error};
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: ${T.border.circle};
+  right: 0.8rem;
 `
 
 export const Input = styled.input`

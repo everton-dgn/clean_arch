@@ -6,8 +6,8 @@ const FormStatus = ({ formStatus }: FormStatusProps) => {
   return (
     <S.WrapperError>
       {formStatus.isLoading && <C.Load />}
-      {formStatus.errorMessage && (
-        <S.MessageError role="status">{formStatus.errorMessage}</S.MessageError>
+      {formStatus.main && (
+        <S.MessageError role="status">{formStatus.main}</S.MessageError>
       )}
     </S.WrapperError>
   )
