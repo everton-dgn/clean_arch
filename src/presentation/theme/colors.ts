@@ -6,6 +6,7 @@ export const colors = {
   black: '#222',
   background: '#f2f2f2',
   error: '#ff3a3a',
+  success: '#00b741',
   disabledBackground: '#ccc',
   disabledColor: '#666'
 }
