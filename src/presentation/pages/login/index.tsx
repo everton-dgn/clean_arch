@@ -2,6 +2,7 @@ import * as C from 'presentation/components'
 import { useEffect, useState } from 'react'
 import * as S from './styles'
 import { FormErrorType, FormStatusType } from './types'
+import { useSetPageTitle } from 'presentation/hooks'
 
 const Login = () => {
   const [errorState, setErrorState] = useState<FormErrorType>({
@@ -12,6 +13,8 @@ const Login = () => {
   const [formStatus, setFormStatus] = useState<FormStatusType>({
     isLoading: false
   })
+
+  useSetPageTitle('Página de Login')
 
   useEffect(() => {
     !errorState && setErrorState(errorState)
