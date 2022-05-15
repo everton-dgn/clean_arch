@@ -20,7 +20,11 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
-    "prettier"
+    "prettier",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -34,8 +38,11 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
-    "prettier",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library",
+    "jest",
+    "prettier"
   ],
   "rules": {
     "no-useless-constructor": "off",
@@ -53,5 +60,17 @@
     "eslint-disable-next-line": "off",
     "react/display-name": "off",
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.tsx?", "**/?(*.)+(spec|test).tsx?"],
+      "plugins": ["jest-dom", "testing-library", "jest"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
+    }
+  ]
 }

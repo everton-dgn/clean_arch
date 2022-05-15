@@ -21,7 +21,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.ts'
+    '^.+\\.svg$': '<rootDir>/src/presentation/mocks/svg.ts'
   },
   transform: {
     '^.+\\.tsx?$': [

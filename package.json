@@ -28,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
+    "*.{ts,tsx}": [
       "yarn lint",
       "yarn lint:css"
     ]
@@ -44,6 +44,9 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "eslint-plugin-jest": "^26.2.1",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-testing-library": "^5.5.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@faker-js/faker": "^6.3.1",
