@@ -5,5 +5,8 @@ export const colors = {
   white: '#fff',
   black: '#222',
   background: '#f2f2f2',
-  error: '#ff3a3a'
+  error: '#ff3a3a',
+  success: '#00b741',
+  disabledBackground: '#ccc',
+  disabledColor: '#666'
 }

@@ -1,8 +1,9 @@
 <div align="center">
 
-  <a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/clean_arch?style=plastic)</a>
-  ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/clean_arch?style=plastic)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/clean_arch?color=yellow&style=plastic)
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/clean_arch?style=plastic)</a>
+![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/clean_arch?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/clean_arch?color=yellow&style=plastic)
+
 </div>
 
 <h1 align="center">Clean Architecture</h1>
@@ -35,21 +36,21 @@ In addition to being constantly updated, this project was configured in the smal
 
 # :pushpin: Contents
 
-* [Technologies](#globe_with_meridians-technologies)
-* [Features](#triangular_flag_on_post-features)
-* [Prerequisites](#white_check_mark-prerequisites)
-* [How to install and run the project](#question-how-to-install-and-run-the-project)
-  * [Clone Repository](#clone-repository)
-  * [Install Dependencies](#install-dependencies)
-  * [Start Development Environment](#start-development-environment)
-  * [Generate Production Build](#generate-production-build)
-  * [Generate Development Build](#generate-development-build)
-  * [Start Production Environment](#start-production-environment)
-  * [Run Tests](#run-tests)
-  * [Run Tests in Watch Mode](#run-tests-in-watch-mode)
-  * [Run Lints](#run-lints)
-* [Important Considerations](#rotating_light-important-considerations)
-* [Author](#technologist-author)
+- [Technologies](#globe_with_meridians-technologies)
+- [Features](#triangular_flag_on_post-features)
+- [Prerequisites](#white_check_mark-prerequisites)
+- [How to install and run the project](#question-how-to-install-and-run-the-project)
+  - [Clone Repository](#clone-repository)
+  - [Install Dependencies](#install-dependencies)
+  - [Start Development Environment](#start-development-environment)
+  - [Generate Production Build](#generate-production-build)
+  - [Generate Development Build](#generate-development-build)
+  - [Start Production Environment](#start-production-environment)
+  - [Run Tests](#run-tests)
+  - [Run Tests in Watch Mode](#run-tests-in-watch-mode)
+  - [Run Lints](#run-lints)
+- [Important Considerations](#rotating_light-important-considerations)
+- [Author](#technologist-author)
 
 <br />
 
@@ -67,7 +68,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 🚩 Lints: ESlint, Stylelint, Prettier, EditorConfig, Commitlint and Typecheck
 
-✅ Jest 
+✅ Jest
 
 🐙 React Testing Library
 
@@ -88,6 +89,7 @@ In addition to being constantly updated, this project was configured in the smal
 - [x] Accessible for mouseless navigation and screen readers;
 
 - [x] Custom hooks for:
+
   - [x] animation in the assembly and disassembly of components;
   - [x] conditional rendering of components by breakpoints;
 
@@ -191,12 +193,13 @@ yarn typecheck
 
 - Due to husky's build check settings, to push with git, the development server must be stopped first or an error will occur in the `git push` command.
 
-- Some conventions widely used in the React ecosystem were used. For example: 
+- Some conventions widely used in the React ecosystem were used. For example:
+
   - In the root of the components folder, an export index was created to facilitate the use of components with named import. In this way, to use a component just import it as an object and use it with the prefix "C", thus avoiding several unnecessary lines of imports:
-  
+
     ```jsx
     import * as C from 'components'
-    
+
     ...
     <C.Card>
       <C.Input />
@@ -208,7 +211,7 @@ yarn typecheck
 
     ```jsx
     import * as S from './styles'
-    
+
     ...
     <S.Wrapper>
       <S.Title />

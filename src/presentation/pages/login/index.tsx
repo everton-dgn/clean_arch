@@ -1,46 +1,64 @@
-import { ReactComponent as Logo } from 'presentation/assets/logo.svg'
 import * as C from 'presentation/components'
+import { useEffect, useState } from 'react'
 import * as S from './styles'
+import { FormErrorType, FormStatusType } from './types'
+import { useSetPageTitle } from 'presentation/hooks'
 
 const Login = () => {
+  const [errorState, setErrorState] = useState<FormErrorType>({
+    email: 'Campo de e-mail obrigatório',
+    password: 'Campo de senha obrigatório',
+    main: ''
+  })
+  const [formStatus, setFormStatus] = useState<FormStatusType>({
+    isLoading: false
+  })
+
+  useSetPageTitle({ pageTitle: 'Página de Login' })
+
+  useEffect(() => {
+    !errorState && setErrorState(errorState)
+    !formStatus && setFormStatus(formStatus)
+  }, [errorState, formStatus])
+
   return (
     <S.Login>
-      <S.Header>
-        <Logo title="Logo 4D" />
-
-        <S.Title>4Dev - Enquetes para Programadores</S.Title>
-      </S.Header>
+      <C.LoginHeader />
 
       <S.Form>
         <S.SubTitle>Login</S.SubTitle>
 
-        <S.WrapperInputStatus>
-          <S.Input
-            type="email"
-            name="email"
-            placeholder="Digite o seu e-mail"
-          />
-        </S.WrapperInputStatus>
+        <C.Input
+          type="email"
+          name="email"
+          placeholder="Digite o seu e-mail"
+          titleCircleFieldStatus={errorState.email}
+          isValidatedTheField={false}
+        />
 
-        <S.WrapperInputStatus>
-          <S.Input
-            type="password"
-            name="password"
-            placeholder="Digite a sua senha"
-          />
-        </S.WrapperInputStatus>
+        <C.Input
+          type="password"
+          name="password"
+          placeholder="Digite a sua senha"
+          titleCircleFieldStatus={errorState.password}
+          isValidatedTheField={false}
+        />
 
-        <S.Button type="submit">Entrar</S.Button>
+        <S.Button type="submit" disabled={true}>
+          Entrar
+        </S.Button>
 
         <S.WrapperLink>Criar conta</S.WrapperLink>
 
-        <S.WrapperError>
-          <C.Load />
-          <S.MessageError>Erro</S.MessageError>
-        </S.WrapperError>
+        <C.FormStatus
+          formStatus={{
+            ...errorState,
+            ...formStatus
+          }}
+        />
       </S.Form>
 
-      <S.Footer />
+      <C.Footer />
     </S.Login>
   )
 }

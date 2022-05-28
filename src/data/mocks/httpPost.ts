@@ -6,7 +6,7 @@ const object = {
   keyB: 22
 }
 
-export const mockPostRequest = (): HttpPostParams<any> => ({
+export const mockPostRequest = (): HttpPostParams<unknown> => ({
   url: faker.internet.url(),
   body: faker.helpers.objectValue(object)
 })

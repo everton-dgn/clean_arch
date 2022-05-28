@@ -1,19 +1,13 @@
-import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import { GlobalStyle } from 'presentation/globalStyles'
 import Routes from 'presentation/router'
-import { persistor, store } from 'presentation/store/configStore'
-import { PersistGate } from 'redux-persist/integration/react'
+import { MainProviders } from 'presentation/utils'
 
 const App = () => (
-  <Provider store={store}>
-    <PersistGate loading={<h1>Loading...</h1>} persistor={persistor}>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-      <GlobalStyle />
-    </PersistGate>
-  </Provider>
+  <MainProviders>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </MainProviders>
 )
 
 export default App

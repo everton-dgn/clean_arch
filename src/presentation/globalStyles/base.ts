@@ -1,7 +1,7 @@
 import T from 'presentation/theme'
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none !important;
     font-family: ${T.fonts.family};
     font-size: ${T.fonts.sizes.medium};
+    outline: none;
   }
 
   html {
@@ -45,6 +46,10 @@ export const GlobalStyle = createGlobalStyle`
     &:hover {
       opacity: 0.9;
     }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem ${T.colors.white}, 0 0 0 0.4rem ${T.colors.black};
+    }
   }
 
   #root {
@@ -63,12 +68,14 @@ export const GlobalStyle = createGlobalStyle`
   input[type="password"],
   input[type="email"] {
     width: 100%;
-    border: 0.1rem solid ${T.colors.primaryLight};
+    border: none;
+    box-shadow: 0 0 0 0.1rem ${T.colors.primaryLight};
     line-height: 4rem;
     border-radius: 0.4rem;
+    background-color: ${T.colors.white};
 
     &:focus {
-      outline-color: ${T.colors.primaryLight};
+      box-shadow: 0 0 0 0.2rem ${T.colors.black};
     }
   }
 

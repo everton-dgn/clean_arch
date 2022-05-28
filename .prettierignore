@@ -1,1 +1,9 @@
-!.jest
+src/presentation/assets
+.jest
+dist
+yarn.lock
+.gitignore
+.eslintignore
+.gitattributes
+coverage
+.tsBuildInfoFile

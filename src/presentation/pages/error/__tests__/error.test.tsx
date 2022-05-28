@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
-import { renderWithProviders } from 'utils'
+import { renderWithProviders } from 'presentation/utils'
 import CustomError from '..'
 
-describe('[Page] CustomError', () => {
+describe('CustomError', () => {
   it('should an error page', () => {
     const { container } = renderWithProviders(<CustomError />)
     expect(container).toBeInTheDocument()
