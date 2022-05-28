@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import * as Pages from 'presentation/pages'
-import * as Template from 'presentation/templates'
+import * as C from 'presentation/components'
 
 const RoutesWrapper = () => (
   <Suspense fallback={<>Lazy Loading...</>}>
@@ -21,9 +21,9 @@ const RoutesWrapper = () => (
       <Route
         path="*"
         element={
-          <Template.Error>
+          <C.ErrorTemplate>
             <Pages.Error />
-          </Template.Error>
+          </C.ErrorTemplate>
         }
       />
     </Routes>
