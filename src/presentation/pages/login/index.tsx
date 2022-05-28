@@ -14,7 +14,7 @@ const Login = () => {
     isLoading: false
   })
 
-  useSetPageTitle('Página de Login')
+  useSetPageTitle({ pageTitle: 'Página de Login' })
 
   useEffect(() => {
     !errorState && setErrorState(errorState)

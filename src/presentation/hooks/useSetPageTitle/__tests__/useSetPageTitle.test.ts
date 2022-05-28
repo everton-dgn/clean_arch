@@ -4,7 +4,7 @@ import { useSetPageTitle } from '..'
 describe('[Hooks] useSetPageTitle', () => {
   it('should set page title equal to pageTitle prop', () => {
     const mockPageTitle = 'Example Page Test'
-    renderHook(() => useSetPageTitle(mockPageTitle))
+    renderHook(() => useSetPageTitle({ pageTitle: mockPageTitle }))
     expect(document.title).toEqual(mockPageTitle)
   })
 })

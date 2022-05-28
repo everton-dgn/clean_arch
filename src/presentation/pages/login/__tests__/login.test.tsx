@@ -12,8 +12,8 @@ describe('Login', () => {
     const buttonSubmit = screen.getByRole('button', {
       name: /entrar/i
     })
-    const titleEmail = screen.queryByTitle(/campo de e-mail obrigatório/i)
-    const titlePassword = screen.queryByTitle(/campo de senha obrigatório/i)
+    const titleEmail = screen.getByTitle(/campo de e-mail obrigatório/i)
+    const titlePassword = screen.getByTitle(/campo de senha obrigatório/i)
 
     expect(spinner).not.toBeInTheDocument()
     expect(errorMessage).not.toBeInTheDocument()
