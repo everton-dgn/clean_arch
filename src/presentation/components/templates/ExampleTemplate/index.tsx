@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
 import * as S from './styles'
 
-const Default = () => {
+const ExampleTemplate = () => {
   return (
     <S.Grid>
-      <h1>Template Default</h1>
+      <S.Header role="banner">Template Example</S.Header>
       <div>
         <Outlet />
       </div>
@@ -12,4 +12,4 @@ const Default = () => {
   )
 }
 
-export default Default
+export default ExampleTemplate

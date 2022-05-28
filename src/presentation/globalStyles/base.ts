@@ -1,7 +1,7 @@
 import T from 'presentation/theme'
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -72,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 0.1rem ${T.colors.primaryLight};
     line-height: 4rem;
     border-radius: 0.4rem;
+    background-color: ${T.colors.white};
 
     &:focus {
       box-shadow: 0 0 0 0.2rem ${T.colors.black};
