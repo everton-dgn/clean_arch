@@ -1,8 +1,8 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin, EnvironmentPlugin } = require('webpack')
-const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
@@ -111,7 +111,6 @@ module.exports = env => ({
       minify: isProduction,
       cache: true
     }),
-    ...(isDevelopment ? [new HotModuleReplacementPlugin()] : []),
     ...(isDevelopment ? [new ReactRefreshWebpackPlugin()] : [])
   ]
 })
